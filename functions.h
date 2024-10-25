@@ -2,10 +2,21 @@
 #define MATRIX_H
 
 struct Point{
-    int x;
-    int y;
+    float x;
+    float y;
 };
 
-typedef struct Point Point; 
+typedef struct Point Point;
+
+struct DataSet{
+    int size;
+    Point * tab;
+};
+
+typedef struct DataSet DataSet;
+
+DataSet * create_dataset_from_array(int size, float array[]);
+void print_point(Point point);
+void print_dataset(DataSet * set);
 
 #endif // !MATRIX_H
