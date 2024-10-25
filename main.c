@@ -4,10 +4,17 @@
 
 int main(){
     //premier jeu de données 
-    float set1_values[] = {-1.0, 1.0, -0.5, 0.5, 0, 0, 0.5, 0.5, 1, 1};
+    float set1_values[] = {-1.0, 1.0, -0.5, 0.5, 0.0, 0.0, 0.5, 0.5, 1.0, 1.0};
     DataSet * set1 = create_dataset_from_array(4, set1_values);
     print_dataset(set1);
+    //deuxième jeu de données
+    float set2_values[] = {-1, 1, -0.8, 0.8, -0.6, 0.6, -0.4, 0.4, -0.2, 0.2, 0.0, 0.0, 0.2, 0.2, 0.4, 0.4, 0.6, 0.6, 0.8, 0.8, 1.0, 1.0};
+    DataSet * set2 = create_dataset_from_array(10, set2_values);
+    print_dataset(set2);
+
+
     free_dataset(set1);
+    free_dataset(set2);
     return 0;
 }
 
@@ -35,6 +42,7 @@ void print_dataset(DataSet * set){
             printf("|\n");
         }
     }
+    printf("\n");
 }
 
 void free_dataset(DataSet * set){
