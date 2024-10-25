@@ -15,6 +15,9 @@ int main(){
     float x = lagrange(set1, -0.75);
     printf("%f\n", x);
 
+    float y = lagrange(set2, 0.75);
+    printf("%f\n", y);
+
     free_dataset(set1);
     free_dataset(set2);
     return 0;

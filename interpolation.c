@@ -4,19 +4,19 @@
 #include "functions.h"
 
 float lagrange(DataSet * set, float x){
-    float result = 0;
-    float temp = 1;
+    float sum = 0;
+    float product = 1;
     int i, j;
 
-    for(i=0; i<set->size+1; i++){
-        for(j=0; j<set->size+1; j++){
+    for(i=0; i<set->size; i++){
+        for(j=0; j<set->size; j++){
             if(i!=j){
-                temp = temp * ((x-set->tab[j].x)/(set->tab[i].x - set->tab[j].x));
+                product *= ((x-set->tab[j].x)/(set->tab[i].x - set->tab[j].x));
             }
         }
-        result += temp*set->tab[i].y;
-        temp = 1;
+        sum += product*set->tab[i].y;
+        product = 1;
     }
 
-    return result;
+    return sum;
 }
