@@ -1,4 +1,4 @@
-#include <sdio.h>
+#include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
 #include "functions.h"
@@ -14,7 +14,7 @@ float lagrange(DataSet * set, float x){
                 temp = temp * ((x-set->tab[j].x)/(set->tab[i].x - set->tab[j].x));
             }
         }
-        result += temp;
+        result += temp*set->tab[i].y;
         temp = 1;
     }
 

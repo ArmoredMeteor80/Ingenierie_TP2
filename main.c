@@ -12,6 +12,8 @@ int main(){
     DataSet * set2 = create_dataset_from_array(10, set2_values);
     print_dataset(set2);
 
+    float x = lagrange(set1, -0.75);
+    printf("%f\n", x);
 
     free_dataset(set1);
     free_dataset(set2);
