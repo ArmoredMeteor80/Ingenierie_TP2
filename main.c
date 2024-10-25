@@ -7,6 +7,7 @@ int main(){
     float set1_values[] = {-1.0, 1.0, -0.5, 0.5, 0, 0, 0.5, 0.5, 1, 1};
     DataSet * set1 = create_dataset_from_array(4, set1_values);
     print_dataset(set1);
+    free_dataset(set1);
     return 0;
 }
 
@@ -36,4 +37,8 @@ void print_dataset(DataSet * set){
     }
 }
 
+void free_dataset(DataSet * set){
+    free(set->tab);
+    free(set);
+}
 
