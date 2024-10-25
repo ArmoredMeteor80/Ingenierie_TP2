@@ -18,5 +18,6 @@ typedef struct DataSet DataSet;
 DataSet * create_dataset_from_array(int size, float array[]);
 void print_point(Point point);
 void print_dataset(DataSet * set);
+float lagrange(DataSet * set, float x);
 
 #endif // !MATRIX_H
