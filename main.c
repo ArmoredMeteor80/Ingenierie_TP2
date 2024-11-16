@@ -29,6 +29,26 @@ int main(){
     }
 
     printf("----------- Partie 1 ----------\n");
+    //Tchebychev
+    nb_points = 100;
+    float x_points4_tche[nb_points+1];
+    
+    FILE * fichier_valeurs_tcheby4 = fopen("fichier_valeurs_tcheby4.csv", "w+");
+    // Création des points de Tchebychev pour le set1
+    for (int i = 0; i <= nb_points; i++) {
+        x_points4_tche[i] = cos(((2 * (nb_points - i) + 1) * M_PI) / (2 * (nb_points + 1)));
+        float y = lagrange(set1, x_points4_tche[i]);
+        fprintf(fichier_valeurs_tcheby4, "%f;%f\n", x_points4_tche[i], y);
+    }
+
+    float x_points10_tche[nb_points+1];
+    FILE * fichier_valeurs_tcheby10 = fopen("fichier_valeurs_tcheby10.csv", "w+");
+    // Création des points de Tchebychev pour le set2
+    for (int i = 0; i <= nb_points; i++) {
+        x_points10_tche[i] = cos(((2 * (nb_points - i) + 1) * M_PI) / (2 * (nb_points + 1)));
+        float y = lagrange(set2, x_points10_tche[i]);
+        fprintf(fichier_valeurs_tcheby10, "%f;%f\n", x_points10_tche[i], y);
+    }
 
     free_dataset(set1);
     free_dataset(set2);
