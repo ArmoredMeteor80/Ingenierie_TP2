@@ -3,6 +3,7 @@
 #include <math.h>
 #include "dataset.h"
 
+// Fonction pour calculer le polynôme de Lagrange en un point x
 float lagrange(DataSet * set, float x){
     float sum = 0;
     float product = 1;
