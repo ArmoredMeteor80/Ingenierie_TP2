@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
-#include "functions.h"
+#include "dataset.h"
 
 float lagrange(DataSet * set, float x){
     float sum = 0;
